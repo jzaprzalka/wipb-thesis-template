@@ -1,0 +1,97 @@
+\documentclass{thesis}
+
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subcaption}
+
+\title          {Praca Inżynierska}
+\author         {Autor}
+\date           {\today}
+% ---------------------------------------------
+\katedra        {Katedra}
+\thesistype     {Inżynierska}
+\subject        {Temat pracy dyplomowej}
+\thesisauthor   {Autor}
+\supervisor     {Promotor}
+\thesisyear     {2022} % Rok złożenia pracy dyplomowej w dziekanacie
+% Plik PDF z kartą dyplomową - wymagany do uruchomienia kompilacji
+% Kartę dyplomową należy pobrać z SRPD
+\karta          {karta_dyplomowa.pdf} 
+% Plik TEX ze streszczeniem w języku obcym nowożytnym
+\summary        {summary}
+% Plik pdf z oświadczeniem o samodzielności - do pobrania ze strony wydziału
+% Pobrany ze strony wydziału dokument .doc wypełnić i zapisać jako statement.pdf 
+\statement      {statement.pdf} 
+
+\begin{document}
+
+    % Renders the first 4 pages
+    \maketitle
+    
+    \tableofcontents
+
+    \thispagestyle{empty}
+    \setcounter{page}{0}
+    \pagestyle{plain}
+
+    \widowpenalty10000
+    \clubpenalty10000
+
+    % =======================================
+    %   Contents go here
+    % =======================================
+    \chapter{Wstęp}
+    
+    This is some Contents \cite{test}.
+
+    % To include chapter form different file use 
+    % \include{chaptername}
+
+% =======================================
+%   Bibliography
+% =======================================
+
+    \bibliographystyle{unsrt}
+    \addtocontents{toc}{
+        \contentsline{chapter}{Bibliografia}{\thepage}{}
+    }
+    \bibliography{bibliography}
+
+% =======================================
+%   List of Tables
+% =======================================
+
+    \listoftables
+    \addtocontents{toc}{
+        \contentsline{chapter}{Spis tabel}{\thepage}{}
+    }
+
+% =======================================
+%   List of Figures
+% =======================================
+
+    \listoffigures
+    \addtocontents{toc}{
+        \contentsline{chapter}{Spis rysunków}{\thepage}{}
+    }
+
+% =======================================
+%   List of Listings
+% =======================================
+
+    \lstlistoflistings
+    \addtocontents{toc}{
+        \contentsline{chapter}{Spis listingów}{\thepage}{}
+    }
+
+% =======================================
+%   List of Algorithms
+% =======================================
+
+    \listofalgorithms
+    \addtocontents{toc}{
+        \contentsline{chapter}{Spis algorytmów}{\thepage}{}
+    }
+
+\end{document}
